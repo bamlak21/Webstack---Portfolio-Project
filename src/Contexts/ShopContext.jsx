@@ -52,7 +52,6 @@ const ShopContextProvider = (props) => {
     removeFromCart,
     getTotalCartAmount,
     cartCounter,
-    Notification,
   };
 
   return (
