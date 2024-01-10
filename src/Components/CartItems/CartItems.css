@@ -110,4 +110,6 @@
   background: black;
   font-size: larger;
   cursor: pointer;
+
+  margin-left: -16px;
 }

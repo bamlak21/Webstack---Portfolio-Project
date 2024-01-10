@@ -3,6 +3,8 @@ import "./ProductDisplay.css";
 import star_icon from "../assets/star_icon.png";
 import star_dull_icon from "../assets/star_dull_icon.png";
 import { ShopContext } from "../../Contexts/ShopContext";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const ProductDisplay = ({ product }) => {
   const { addToCart } = useContext(ShopContext);
@@ -11,10 +13,10 @@ const ProductDisplay = ({ product }) => {
     <div className="productdisplay">
       <div className="display-left">
         <div className="display-img-list">
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
+          <LazyLoadImage effect="blur" src={product.image} alt="" />
+          <LazyLoadImage effect="blur" src={product.image} alt="" />
+          <LazyLoadImage effect="blur" src={product.image} alt="" />
+          <LazyLoadImage effect="blur" src={product.image} alt="" />
         </div>
         <div className="display-img">
           <img src={product.image} className="display-main-img" alt="" />
@@ -56,10 +58,12 @@ const ProductDisplay = ({ product }) => {
           Add To Cart
         </button>
         <p className="display-right-category">
-          <span>Category: </span>Women, T-shirt,Crop Top
+          <span>Category: </span>
+          {product.category}
         </p>
         <p className="display-right-category">
-          <span>Tag: </span>Modern, Latest trends
+          <span>Tag: </span>
+          {product.tag}
         </p>
       </div>
     </div>

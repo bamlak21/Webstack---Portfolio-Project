@@ -1,30 +1,110 @@
 import React from "react";
-import "./Hero.css";
-import hand_icon from "../assets/hand_icon.png";
-import arrow_icon from "../assets/arrow.png";
-import hero_img from "../assets/hero_image.png";
+import "../Cards/herocard.css";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import HeroCard from "../Cards/HeroCard";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css/pagination";
+import { Link } from "react-router-dom";
+import {
+  Banner1,
+  Banner3,
+  Banner4,
+  Banner5,
+  Banner6,
+} from "../../Components/assets/banners";
 
 const Hero = () => {
   return (
-    <div className="hero">
-      <div className="hero-Left">
-        <div className="wrap">
-          <div className="hero-hand-icon">
-            <p className="span">New</p>
-            <img src={hand_icon} alt="hand_icon" />
-          </div>
-          <p className="span">Collection</p>
-          <p className="span">For Everyone</p>
-        </div>
-        <div className="hero-latest-btn">
-          <div>Latest Collection</div>
-          <img src={arrow_icon} alt="" />
-        </div>
-      </div>
-      <div className="hero-right">
-        <img src={hero_img} alt="hero_image" />
-      </div>
-    </div>
+    <Swiper
+      spaceBetween={30}
+      centeredSlides={true}
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false,
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      modules={[Autoplay, Pagination]}
+      className="swiper"
+    >
+      <SwiperSlide>
+        <HeroCard
+          image={Banner5}
+          para="Tops / skirts"
+          title1="Women Fashion"
+          title2="Collection"
+          url={
+            <Link
+              style={{ textDecoration: "none", color: "#000" }}
+              to="/womens"
+            >
+              Shop Now
+            </Link>
+          }
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <HeroCard
+          image={Banner1}
+          para="Sweaters / Tops"
+          title1="Winter Fashion"
+          title2="Collection"
+          url={
+            <Link
+              style={{ textDecoration: "none", color: "#000" }}
+              to="/womens"
+            >
+              Shop Now
+            </Link>
+          }
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <HeroCard
+          image={Banner3}
+          para="kids / dress"
+          title1="Kids Fashion"
+          title2="Collection"
+          url={
+            <Link style={{ textDecoration: "none", color: "#000" }} to="/kids">
+              Shop Now
+            </Link>
+          }
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <HeroCard
+          image={Banner4}
+          para="T-shits / Jackets"
+          title1="Men Fashion"
+          title2="Collection"
+          url={
+            <Link style={{ textDecoration: "none", color: "#000" }} to="/mens">
+              Shop Now
+            </Link>
+          }
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <HeroCard
+          image={Banner6}
+          para="Joggers / Sports"
+          title1="Sports Fashion"
+          title2="Collection"
+          url={
+            <Link
+              style={{ textDecoration: "none", color: "#000" }}
+              to="/womens"
+            >
+              Shop Now
+            </Link>
+          }
+        />
+      </SwiperSlide>
+    </Swiper>
   );
 };
 
