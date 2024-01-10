@@ -20,7 +20,7 @@ const LoginSignup = () => {
         <p className="loginsignup-login">
           Already have an account?
           <span>
-            <Link to="/login"> Login Here</Link>
+            <Link to="/login"> Login Here.</Link>
           </span>
         </p>
       </div>
