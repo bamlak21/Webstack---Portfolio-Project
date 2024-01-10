@@ -16,7 +16,7 @@ const Login = () => {
         <p className="loginsignup-login">
           Don't have an account?
           <span>
-            <Link to="/loginsign"> Signup Here</Link>
+            <Link to="/loginsign"> Signup Here.</Link>
           </span>
         </p>
       </div>
