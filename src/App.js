@@ -17,25 +17,28 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Shop />} />
+        <Route exact path="/" element={<Shop />} />
         <Route
+          exact
           path="/mens"
           element={<Categories banner={men_banner} category="men" />}
         />
         <Route
+          exact
           path="/womens"
           element={<Categories banner={women_banner} category="women" />}
         />
         <Route
+          exact
           path="/kids"
           element={<Categories banner={kids_banner} category="kid" />}
         />
-        <Route path="/product" element={<Product />}>
-          <Route path=":productId" element={<Product />} />
+        <Route exact path="/product" element={<Product />}>
+          <Route exact path=":productId" element={<Product />} />
         </Route>
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/loginsign" element={<LoginSignup />} />
-        <Route path="/login" element={<Login />} />
+        <Route exact path="/cart" element={<Cart />} />
+        <Route exact path="/loginsign" element={<LoginSignup />} />
+        <Route exact path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </>
