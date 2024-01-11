@@ -1,6 +1,5 @@
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
-import { Route, Routes } from "react-router-dom";
 import Categories from "./Pages/Categories";
 import LoginSignup from "./Pages/LoginSignup";
 import Product from "./Pages/Product";
@@ -11,6 +10,7 @@ import men_banner from "./Components/assets/banner_mens.png";
 import women_banner from "./Components/assets/banner_women.png";
 import kids_banner from "./Components/assets/banner_kids.png";
 import Login from "./Pages/Login";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
